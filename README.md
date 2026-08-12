@@ -7,7 +7,16 @@ LLM execution router that caches before it reaches the cloud.
 
 ```bash
 brew tap naveenreddyalka/daari
+brew trust naveenreddyalka/daari
 brew install daari
+```
+
+The `brew trust` step is required. Homebrew 6 refuses to load formulae from
+third-party taps until you explicitly trust them:
+
+```console
+$ brew info daari
+Error: Refusing to load formula naveenreddyalka/daari/daari from untrusted tap.
 ```
 
 The formula builds the Rust extensions in `pydantic-core` and `watchfiles` from
